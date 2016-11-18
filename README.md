@@ -55,3 +55,18 @@ You can visualize the progress of your experiments during training using Tensorb
 For example, the following is a screenshot of a Tensorboard comparing two different experiments with learning rate decays that kick in at different points. The learning rate drops in half at 60k iterations for the green experiment and 300k iterations for red experiment.
     
 <img src=http://russellsstewart.com/s/tensorbox/tensorboard_loss.png></img>
+
+1. this line cause a error:
+  from utils import train_utils, googlenet_load
+
+  put it  just before "import tensorflow.contrib.slim as slim", will be OK. I havn't figure out why.
+2.  run evaluate.ipynb
+  pip install jupyter
+  jupyter nbconvert evaluate.ipynb --to python --output evaluate.ipynb # be careful it will replace evaluate.py
+  modify the line "get_ipython()..." to  "get_ipython().magic(u'matplotlib auto')"
+  ipython evaluate.ipynb.py
+  
+
+
+
+
