@@ -65,6 +65,9 @@ For example, the following is a screenshot of a Tensorboard comparing two differ
   jupyter nbconvert evaluate.ipynb --to python --output evaluate.ipynb # be careful it will replace evaluate.py
   modify the line "get_ipython()..." to  "get_ipython().magic(u'matplotlib auto')"
   ipython evaluate.ipynb.py
+
+  or just run :(need jupyter installed)
+  ipython notebook evaluate.ipynb
   
 
 
