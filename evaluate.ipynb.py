@@ -72,7 +72,7 @@ with tf.Session() as sess:
             fig = plt.figure(figsize=(12, 12))
             plt.imshow(new_img)
             #plt.show()
-            plt.savefig("pred_%d" % i) 
+            plt.savefig("output/pred_%d" % i) 
         if i % 100 == 0:
             print(i)
     avg_time = (time.time() - t) / (i + 1)

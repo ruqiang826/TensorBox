@@ -62,14 +62,20 @@ For example, the following is a screenshot of a Tensorboard comparing two differ
   put it  just before "import tensorflow.contrib.slim as slim", will be OK. I havn't figure out why.
 2.  run evaluate.ipynb
   pip install jupyter
-  jupyter nbconvert evaluate.ipynb --to python --output evaluate.ipynb # be careful it will replace evaluate.py
-  modify the line "get_ipython()..." to  "get_ipython().magic(u'matplotlib auto')"
-  ipython evaluate.ipynb.py
+  jupyter nbconvert evaluate.ipynb --to python --output evaluate.ipynb # be careful it will replace evaluate.py without --output
+  delete the line "get_ipython()..." if you want to run with "python"
+  python evaluate.ipynb.py
 
   or just run :(need jupyter installed)
   ipython notebook evaluate.ipynb
   
+3. save or show figure
+  save figure : 
+  add "plt.savefig("pred_%d" % i)" after "plt.imshow(new_img)"
 
+  show figure:
+  add "plt.show()" after "plt.imshow(new_img)"
+  
 
 
 
