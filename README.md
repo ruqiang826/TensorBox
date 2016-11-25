@@ -77,5 +77,10 @@ For example, the following is a screenshot of a Tensorboard comparing two differ
   add "plt.show()" after "plt.imshow(new_img)"
   
 
+关于train：
+1. 生成训练数据在 train_utils.load_data_gen -> load_idl_tf -> al.parse && annotation_to_h5 .
+2. 主要的逻辑在al.parse && annotation_to_h5. 这里根据配置文件的    "image_width" "image_height" "grid_height" "grid_width" "batch_size" "region_size"等字段，把一个image切成了很多个cell，根据这里配置，每个cell是32*32 大小，切成300个cell。然后扫描每个cell，这里面如果有需要detect的object，就标记一下。目前的配置，每个cell里只能有一个object。然后把有object的cell，当成一条数据去训练。这是一种等大小切分窗格的方式。
+3. 预测的代码没有看，估计也需要这样切cell，依次过模型。
+
 
 
